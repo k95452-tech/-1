@@ -1,0 +1,233 @@
+/* --- 列表區塊樣式 --- */
+#epaper-list {
+    margin-bottom: 20px; 
+}
+.epaper-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    /* height: 100%; 已移除，改由內容撐開 */
+}
+.epaper-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.epaper-img-container {
+    overflow: hidden;
+    background-color: #fff; 
+}
+.epaper-img-container img {
+    width: 100%;
+    height: auto; 
+    display: block; 
+    transition: transform 0.5s ease;
+}
+.epaper-card:hover .epaper-img-container img {
+    transform: scale(1.05);
+}
+
+/* --- Lightbox 全螢幕閱讀器樣式 --- */
+.epaper-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    flex-direction: column;
+}
+
+.epaper-viewer.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* --- 工具列樣式 --- */
+.newsletter-toolbar {
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10001;
+    pointer-events: none; 
+}
+.toolbar-info, .toolbar-actions { pointer-events: auto; }
+.toolbar-info span {
+    font-size: 1.1rem; letter-spacing: 1px; font-weight: 300;
+    color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+.toolbar-actions { display: flex; align-items: center; gap: 8px; height: 100%; }
+.newsletter-toolbar .btn {
+    border: none; background: transparent; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; padding: 0;
+    border-radius: 50%; transition: all 0.25s ease;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+.newsletter-toolbar .btn i {
+    font-size: 1.3rem; line-height: 1; display: block; margin-top: 1px;
+}
+.newsletter-toolbar .btn:hover { background-color: rgba(255, 255, 255, 0.15); transform: scale(1.05); }
+.newsletter-toolbar .btn:active { transform: scale(0.95); background-color: rgba(255, 255, 255, 0.25); }
+.btn-close-viewer { display: none; }
+
+/* --- Swiper 與 閱讀器佈局 --- */
+.swiper { width: 100%; height: 100%; }
+
+.viewer-content { width: 100%; height: 100%; position: relative; }
+
+/* 主圖區塊 */
+.main-swiper-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0; 
+    z-index: 1; 
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+}
+
+/* 桌機版頁碼樣式 */
+.swiper-pagination-fraction {
+    background: rgba(0, 0, 0, 0.25); 
+    width: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    /* 內距稍微縮小 */
+    padding: 6px 12px; 
+    border-radius: 30px;
+    bottom: 30px !important; 
+    
+    /* 字體縮小 */
+    font-size: 0.85rem; 
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #fff;
+    
+    /* 加入深色文字陰影，確保在白底圖片上依然清晰可見 */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+
+    pointer-events: none;
+    z-index: 1000;
+    backdrop-filter: blur(4px); /* 保留毛玻璃增加質感 */
+}
+
+/* --- 下方縮圖區塊 --- */
+.thumbs-swiper-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; 
+    background: rgba(0, 0, 0, 0.9); 
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    z-index: 20; 
+    transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+	margin: 0 10px;
+}
+
+.thumbs-swiper-section.collapsed {
+    height: 0;
+    padding: 0 !important;
+    border: none;
+    opacity: 0;
+}
+
+.thumbSwiper { width: 100%; height: 80px; }
+
+.thumbSwiper .swiper-slide {
+    width: auto;
+    height: 100%;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent; 
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    box-sizing: border-box;
+}
+.thumbSwiper .swiper-slide:hover { opacity: 0.8; }
+.thumbSwiper .swiper-slide-thumb-active { opacity: 1; border-color: #0d6efd; }
+.thumbSwiper .swiper-slide img {
+    max-height: 100%;
+    height: auto;     
+    width: auto;      
+    object-fit: contain;
+    display: block;
+}
+
+/* 縮圖切換按鈕 */
+.btn-toggle-thumbs {
+    position: absolute;
+    bottom: 120px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30; 
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0; 
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: bottom 0.3s ease, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-toggle-thumbs:hover { background-color: rgba(0, 0, 0, 0.9); }
+
+/* --- 手機版頁碼樣式 --- */
+@media (max-width: 768px) {
+    .toolbar-info { display: none; }
+    .newsletter-toolbar { justify-content: center; padding: 0 15px; }
+    .mySwiper .swiper-slide { padding: 0 15px; box-sizing: border-box; }
+    
+    /* ★ 修改：手機版頁碼樣式 (透明通透 + 陰影) */
+    .swiper-pagination-fraction {
+        font-size: 0.8rem; /* 微調大小 */
+        padding: 4px 12px;
+        bottom: 130px !important;
+        
+        /* 比照桌機風格 */
+        background: rgba(0, 0, 0, 0.25);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(4px);
+    }
+    
+    .newsletter-toolbar .btn { width: 40px; height: 40px; }
+    .newsletter-toolbar .btn i { font-size: 1.1rem; }
+}

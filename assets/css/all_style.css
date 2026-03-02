@@ -1,0 +1,342 @@
+/*整體的CSS*/
+* {
+	font-family: 'Inter', "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+body {
+    font-family: 'Inter', "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 1px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left bottom;
+    background-size: cover;
+	-ms-overflow-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+p {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+  text-align: justify;
+  padding-bottom: 1em;
+}
+.indent {
+  text-indent: 2em;
+}
+
+.title {
+	font-weight: 600;
+	color: #7162cc;
+}
+
+/* ========== 選單樣式========== */
+
+/* ===== 主選單 Hover / Active 效果補強 ===== */
+
+.nav-link {
+  transition: all 0.25s ease-in-out;
+}
+
+/* 主選單 hover */
+.nav-link:hover {
+  background-color: #0e7490; /* cyan-700 */
+  color: #fff !important;
+}
+
+/* 主選單 active（桌機＋手機） */
+.nav-link.bg-cyan-700 {
+  background-color: #0e7490 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* 手機版主選單 hover */
+.mobile-menu .nav-link:hover {
+  background-color: #0e7490 !important;
+  color: #fff !important;
+}
+
+/* 下拉選單 hover 效果 */
+.dropdownMenu .dropdown-item:hover,
+.m-sub-menu .dropdown-item:hover {
+  color: #0e7490 !important;
+  background-color: #cffafe !important;
+}
+
+/* ===== 下拉選單 Active 效果 ===== */
+.dropdownMenu .dropdown-item.active,
+.m-sub-menu .dropdown-item.active  {
+  background-color: #bae6fd !important; /* 比 hover 稍深的藍 */
+  color: #075985 !important; /* 深藍文字 */
+  font-weight: 600;
+  border-left: 3px solid #0e7490; /* 左側強調線 */
+}
+
+/* 滑鼠移入時 transition 平滑 */
+.dropdownMenu a,
+.m-sub-menu a {
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+/* ===== 輪播圖簡化設定 ===== */
+.carousel-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.carousel-img.active {
+  opacity: 1;
+}
+
+/* 箭頭按鈕 */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  color: #0e7490; /* cyan-700 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+  z-index: 10;
+}
+.carousel-btn:hover {
+  background: #fff;
+}
+.carousel-btn.left { left: 0.5rem; }
+.carousel-btn.right { right: 0.5rem; }
+
+/* 指示點 */
+.carousel-dots {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* =============== 版面設定 =============== */
+.page-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .page-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* ===== 清單樣式設定(最新消息、下載專區) ===== */
+
+/* 清單外觀：置中、無項目符號 */
+.item-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: fit-content; /* 寬度依內容調整 */
+}
+
+/* 每一條新聞的排列與分隔線 */
+.item-list li {
+  display: flex;
+  flex-direction: column; /* 手機直排 */
+  align-items: center;    /* 垂直置中 */
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e5e7eb; /* 淺灰線 */
+}
+.item-list li:first-child {
+  border-top: none; /* 第一條不畫線 */
+}
+
+/* 日期外觀 */
+.item-list time {
+  color: #0e7490;      /* cyan-700 */
+  font-weight: 600;
+  text-align: center;
+  width: 6rem;
+}
+
+/* 文字連結 */
+.item-list a {
+  color: #374151;       /* gray-700 */
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.item-list a:hover {
+  color: #0e7490;       /* 滑鼠移入變藍 */
+}
+
+/* 桌機以上改為左右排列 */
+@media (min-width: 640px) {
+  .item-list li {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .item-list time {
+    text-align: center;
+	margin-right: 20px;
+  }
+}
+
+/* 固定 footer 高度與字型 */
+#footer_fixed {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  padding-bottom: 70px; /* 初始安全距，JS 會自動覆蓋 */
+}
+
+/* ========== 圖片展示樣式 ========== */
+/* 圖片群組排列（可自動換行） */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 手機：一列一張圖 */
+  gap: 1.5rem;                /* 每張圖之間的間距 */
+  justify-content: center;    /* 水平置中 */
+}
+/* 平板以上：兩張圖並排 */
+@media (min-width: 640px) {
+  .gallery-grid.sm-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 桌機以上：三張圖並排 */
+@media (min-width: 1024px) {
+  .gallery-grid.lg-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 單張圖片外觀 */
+.gallery-img {
+  width: 100%;                /* 滿版寬度 */
+  border-radius: 12px;        /* 圓角邊框 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* 陰影 */
+  transition: opacity 0.3s;   /* 滑鼠移入淡入淡出 */
+}
+.gallery-img:hover {
+  opacity: 0.9;               /* 滑鼠移入時略為變亮 */
+}
+
+/* 圖片下方說明文字 */
+.caption {
+  font-size: 0.9rem;          /* 稍小的字體 */
+  color: #4b5563;             /* 深灰色 */
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* === 固定 footer 且保留下方空間 === */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 頁面至少佔滿整個視窗 */
+}
+
+main {
+  flex: 1; /* 主體自動撐開高度，讓 footer 固定不會擠上來 */
+  padding-bottom: 100px; /* 保留與 footer 的距離，避免內容被擋 */
+}
+
+/* ===== 通用清單樣式（ul / ol） ===== */
+ul, ol {
+  margin: 1rem 0 1.5rem 1.5rem !important;
+  padding-left: 1.5rem !important;
+  color: #374151; /* gray-700 */
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* 無序清單（ul）圓點樣式 */
+ul {
+  list-style-type: disc !important;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+/* 有序清單（ol）數字樣式 */
+ol {
+  list-style-type: decimal !important;
+}
+
+ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* 第二層巢狀清單縮排 */
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-left: 1.25rem !important;;
+  list-style-type: circle;
+}
+
+/* 清單內的超連結樣式 */
+li a {
+  color: #0e7490; /* cyan-700 */
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+li a:hover {
+  color: #0891b2; /* cyan-600 */
+}
+
+.img-icon {
+	width:30px;
+}
+
+/* ===== PDF iframe 標準高度配置 ===== */
+.form-pdf {
+  width: 100%;
+  border: 0;
+  display: block;
+
+  /* 桌機 */
+  height: calc(100vh - 280px);
+  min-height: 1100px;
+}
+
+/* 平板 */
+@media (max-width: 1024px) {
+  .form-pdf {
+    height: calc(100vh - 240px);
+  }
+}
+
+/* 手機 */
+@media (max-width: 640px) {
+  .form-pdf {
+    height: calc(100vh - 200px);
+    min-height: 520px;
+  }
+}
