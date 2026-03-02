@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="奇美醫院,奇美,掛號,醫院,醫療,醫學中心,Chimei,Chimei Hospital,Chimei Medical Center" />
+<meta name="description" content="奇美醫院健康台灣深耕計畫" />
+<title>奇美醫院健康台灣深耕計畫</title>
+
+<link rel="icon" href="assets/images/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="assets/css/all_style.css">
+
+<script type="text/javascript" src="https://www.chimei.org.tw/fileinfodoc/js/ajax.js"></script>
+<script type="text/javascript" src="https://www.chimei.org.tw/fileinfodoc/js/getfileInfo.js"></script>
+<script type="text/javascript" src="https://www.chimei.org.tw/countdoc/js/ajax.js"></script>
+<script type="text/javascript" src="https://www.chimei.org.tw/countdoc/js/count.js"></script>
+</head>
+
+<body class="bg-gray-50" onload="getFileInfo('59400');getCounter('59400');">
+<div id="header_layer"></div>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- ===== 執行進度區塊 ===== -->
+  <section id="result" class="page-section px-4 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-lg text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-cyan-700 mb-2">執行進度</h2>
+      <p class="text-gray-600 mb-6">本頁資料需登入院內帳號方可檢視，資料由 Power BI 自動更新。</p>
+
+      <!-- 操作按鈕 -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a
+          href="https://app.powerbi.com/Redirect?action=OpenApp&appId=5eb79e0a-67e8-44aa-8005-7786544a0907&ctid=24de0681-c8f7-46e8-8da7-1f5b393d834d&experience=power-bi"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-cyan-700 text-white font-medium hover:bg-cyan-800 transition"
+        >
+          <i class="fa-solid fa-chart-line"></i>
+          開啟 Power BI 儀表板（新視窗）
+        </a>
+
+        <button
+          type="button"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-gray-100 text-gray-800 font-medium hover:bg-gray-200 transition"
+          onclick="window.location.reload();"
+        >
+          <i class="fa-solid fa-rotate-right"></i>
+          重新整理本頁
+        </button>
+      </div>
+
+      <!-- 提示區 -->
+      <div class="mt-6 text-left max-w-3xl mx-auto bg-gray-50 border rounded-lg p-4">
+        <p class="text-sm text-gray-700 leading-relaxed">
+          <span class="font-semibold">提示：</span>
+          若您已登入院內帳號仍無法檢視，表示尚未被加入 App 受眾（Audience）或權限群組，請洽管理者協助。
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer_layer"></div>
+
+<script src="assets/js/header_layer.js" defer></script>
+<script src="assets/js/footer_layer.js" defer></script>
+</body>
+</html>

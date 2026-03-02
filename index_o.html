@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="奇美醫院,奇美,掛號,醫院,醫療,醫學中心,Chimei,Chimei Hospital,Chimei Medical Center" />
+<meta name="description" content="奇美醫院健康台灣深耕計畫" />
+<title>奇美醫院健康台灣深耕計畫</title>
+<!--醫院LOGO-->
+<link rel="icon" href="assets/images/favicon.ico">
+<!-- Tailwind CSS --> 
+<script src="https://cdn.tailwindcss.com"></script> 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="assets/css/all_style.css">
+<!-- 瀏覽人次 --> 
+<script type="text/javascript" src="https://www.chimei.org.tw/fileinfodoc/js/ajax.js"></script> 
+<script type="text/javascript" src="https://www.chimei.org.tw/fileinfodoc/js/getfileInfo.js"></script> 
+<script type="text/javascript" src="https://www.chimei.org.tw/countdoc/js/ajax.js"></script> 
+<script type="text/javascript" src="https://www.chimei.org.tw/countdoc/js/count.js"></script>
+<!--以下依照實際情況增加減，以上每頁都會出現--> 
+</head>
+<body class="bg-gray-50" onload="getFileInfo('9400');getCounter('59400');">
+<!--導覽列-->
+<div id="header_layer"></div>
+
+<!-- 內容區塊 -->
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8"> 
+  
+  <!-- ===== 首頁區塊 ===== -->
+  <section id="intro" class="px-4 sm:px-6 lg:px-3 pt-4 md:pt-6 pb-8 md:pb-12">
+    
+    <!-- 輪播圖 -->
+    <div class="carousel max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden mb-16 relative"> 
+      <!-- 圖片列表（要新增一張圖片，就複製一行 <img> 改 src 即可） -->
+      <div class="carousel-wrapper relative w-full h-[220px] sm:h-[300px] md:h-[400px] lg:h-[450px] xl:h-[500px] overflow-hidden"> 
+	    <img src="img/index/messageImage_1754653365326.jpg" alt="第一張圖片" class="carousel-img active">
+		<img src="img/index/messageImage_1754652983831.jpg" alt="第二張圖片" class="carousel-img">
+		<img src="img/index/photo.png" alt="第三張圖片" class="carousel-img">
+	  </div>
+      
+      <!-- 左右箭頭 -->
+      <button id="prevBtn" class="carousel-btn left" aria-label="上一張"> <i class="fa-solid fa-chevron-left"></i> </button>
+      <button id="nextBtn" class="carousel-btn right" aria-label="下一張"> <i class="fa-solid fa-chevron-right"></i> </button>
+      
+      <!-- 指示點 -->
+      <div id="carouselDots" class="carousel-dots"></div>
+    </div>
+    
+    <!-- 四個範疇 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <!-- 範疇一 -->
+	  <a href="data/index/範疇一.pdf" target="_blank" class="block bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-center items-center focus:outline-none focus:ring-2 focus:ring-cyan-400">
+		<div class="flex justify-center items-center mb-4">
+		  <div class="bg-cyan-100 p-4 rounded-full">
+			<svg class="w-10 h-10 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+			  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25A8.967 8.967 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 01-6 2.292m0-14.25V21"/>
+			</svg>
+		  </div>
+		</div>
+		<h3 class="text-lg font-bold text-gray-800 mb-2">範疇一</h3>
+		<p class="text-2xl text-cyan-800 font-bold mt-2">優化醫療工作條件</p>
+	  </a>
+	  
+      <!-- 範疇二 -->
+	  <a href="data/index/範疇二.pdf" target="_blank" class="block bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-center items-center focus:outline-none focus:ring-2 focus:ring-cyan-400">
+		<div class="flex justify-center items-center mb-4">
+		  <div class="bg-cyan-100 p-4 rounded-full">
+			<svg class="w-10 h-10 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+			  <path stroke-linecap="round" stroke-linejoin="round" d="M8 15.75l-2.25-2.25a3 3 0 114.243-4.243l1.06 1.06m2.122 2.122l1.06 1.06a3 3 0 104.243-4.243l-2.25-2.25M14.25 9.75l-4.5 4.5m0 0L9 17.25A2.25 2.25 0 0011.25 19.5h1.5A2.25 2.25 0 0015 17.25l-.75-3" />
+			</svg>
+		  </div>
+		</div>
+		<h3 class="text-lg font-bold text-gray-800 mb-2">範疇二</h3>
+		<p class="text-2xl text-cyan-800 font-bold mt-2">規劃多元人才培訓</p>
+	  </a>
+
+	  <!-- 範疇三 -->
+	  <a href="data/index/範疇三.pdf" target="_blank" class="block bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-center items-center focus:outline-none focus:ring-2 focus:ring-cyan-400">
+		<div class="flex justify-center items-center mb-4">
+		  <div class="bg-cyan-100 p-4 rounded-full">
+			<svg class="w-10 h-10 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+			  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5"/>
+			</svg>
+		  </div>
+		</div>
+		<h3 class="text-lg font-bold text-gray-800 mb-2">範疇三</h3>
+		<p class="text-2xl text-cyan-800 font-bold mt-2">導入智慧科技醫療</p>
+	  </a>
+
+	  <!-- 範疇四 -->
+	  <a href="data/index/範疇四.pdf" target="_blank" class="block bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-center items-center focus:outline-none focus:ring-2 focus:ring-cyan-400">
+		<div class="flex justify-center items-center mb-4">
+		  <div class="bg-cyan-100 p-4 rounded-full">
+			<svg class="w-10 h-10 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+			  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 3.53 3.98 6.91 8.25 11.116A1.5 1.5 0 0012 20.25a1.5 1.5 0 00.75-1.134C17.02 15.16 21 11.78 21 8.25z"/>
+			</svg>
+		  </div>
+		</div>
+		<h3 class="text-lg font-bold text-gray-800 mb-2">範疇四</h3>
+		<p class="text-2xl text-cyan-800 font-bold mt-2">社會責任醫療永續</p>
+	  </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<div id="footer_layer"></div>
+
+<!--載入導覽列-->
+<script src="assets/js/header_layer.js" defer></script> 
+<!--載入footer--> 
+<script src="assets/js/footer_layer.js" defer></script>
+<!--以下依照實際情況增加減，以上每頁都會出現--> 
+<!--載入輪播--> 
+<script src="assets/js/carousel-module.js" defer></script> 
+</body>
+</html>
